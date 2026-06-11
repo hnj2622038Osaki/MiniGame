@@ -24538,6 +24538,7 @@ PlatformEffector2D:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1489137059}
   - {fileID: 1527322653}
   - {fileID: 343313998}
   - {fileID: 800295783}
@@ -24565,4 +24566,3 @@ SceneRoots:
   - {fileID: 1763581821}
   - {fileID: 1596285390}
   - {fileID: 278417498}
-  - {fileID: 1489137059}
