@@ -1,6 +1,8 @@
-using Unity.VisualScripting;
+ï»¿using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 600.0f;
     [SerializeField] Sprite walkSprites;
     private Rigidbody2D rigid;
-    private bool Grounded;
+    private bool Grounded; 
+    private float timer = 0f;
 
     float time = 0;
     int idx = 0;
@@ -25,26 +28,27 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-            GetComponent<Animator>().SetBool("Run", false);
-        // ‰E‚ÉˆÚ“®
+        timer = Time.deltaTime;
+        GetComponent<Animator>().SetBool("Run", false);
+        // å³ã«ç§»å‹•
         if (Keyboard.current.rightArrowKey.isPressed)
         {
             transform.Translate(moveSpeed, 0, 0);
             GetComponent<Animator>().SetBool("Run", true);
         }
-        // ¶‚ÉˆÚ“®
+        // å·¦ã«ç§»å‹•
         if (Keyboard.current.leftArrowKey.isPressed)
         {
             transform.Translate(-moveSpeed, 0, 0);
             GetComponent<Animator>().SetBool("Run", true);
         }
-        // ƒWƒƒƒ“ƒv
+        // ã‚¸ãƒ£ãƒ³ãƒ—
         if (Keyboard.current.upArrowKey.wasPressedThisFrame && rigid.linearVelocityY == 0)
         {
             //rigid.AddForce(transform.up * jumpForce);
             transform.Translate(0, jumpForce, 0);
         }
-        // “–‚½‚è”»’è
+        // å½“ãŸã‚Šåˆ¤å®š
         Vector2 p1 = Spike.transform.position;
         Vector2 p2 = transform.position;
         Vector2 dir = p1 - p2;
@@ -52,13 +56,20 @@ public class PlayerController : MonoBehaviour
         float r1 = 0.5f;
         float r2 = 1.0f;
 
+        if (timer >= 12f)
+        {
+            Debug.Log("ã‚¯ãƒªã‚¢â€¼");
+            SceneManager.LoadScene("ClearScene");
+            return;
+        }
         if (d < r1 + r2)
         {
-            // Õ“Ë‚µ‚½ê‡‚ÍƒvƒŒƒCƒ„[‚ğÁ‚·
             Destroy(gameObject);
+            Debug.Log("ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼");
+            SceneManager.LoadScene("OverScene");
         }
     }
-    // ’n–Ê‚Æ‚ÌÚG”»’è
+    // åœ°é¢ã¨ã®æ¥è§¦åˆ¤å®š
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))

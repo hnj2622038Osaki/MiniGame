@@ -3,14 +3,16 @@ using UnityEngine.EventSystems;
 
 public class SpakeGenerater : MonoBehaviour
 {
-    [SerializeField] private GameObject attackPrefab;   // ’e‚ÌƒvƒŒƒnƒu
-    [SerializeField] private int attackCount = 12;      // ”­Ë‚·‚é’e‚Ì”
-    [SerializeField] private float speed = 5f;              // ’e‚ÌˆÚ“®‘¬“x
-    [SerializeField] private float attackInterval = 1f;     // UŒ‚‚ÌƒCƒ“ƒ^[ƒoƒ‹
-    [SerializeField] private float attackrotation = 15f;     // UŒ‚‚ÌŠp“x
-    private Rigidbody2D rigid;
-    private float timer = 0f;
+    [SerializeField] private GameObject attackPrefab;    // ’e‚ÌƒvƒŒƒnƒu
+    [SerializeField] private int attackCount = 12;       // ”­Ë‚·‚é’e‚Ì”
+    [SerializeField] private float attackspeed = 5f;     // ’e‚ÌˆÚ“®‘¬“x
+    [SerializeField] private float attackInterval = 1f;  // UŒ‚‚ÌƒCƒ“ƒ^[ƒoƒ‹
+    [SerializeField] private float attackrotation = 15f; // UŒ‚‚ÌŠp“x
+
     private float CurrentBaceRotation = 0f; // Œ»İ‚ÌŠp“x
+
+    private float timer = 0f;
+    private Rigidbody2D rigid;
 
     private void Start()
     {
@@ -22,6 +24,7 @@ public class SpakeGenerater : MonoBehaviour
     {
         // ƒ^ƒCƒ}[‚ği‚ß‚é
         timer += Time.deltaTime;
+
         // ’e‚Ì”­ËŠÔŠu
         if (timer >= attackInterval)
         {
@@ -41,10 +44,9 @@ public class SpakeGenerater : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    // “G‚ÌUŒ‚
     private void AttackRotationCircle()
     {
-        // ’e‚Æ’e‚ÌŠÔ‚ÌŠp“x
-        float RotationStep = 360f / attackCount;
-
+        
     }
 }
