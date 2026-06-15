@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    GameObject Spike;
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float jumpForce = 600.0f;
     [SerializeField] Sprite walkSprites;
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        Spike = GameObject.Find("Spiked Ball");
     }
 
     void Update()
@@ -48,13 +46,6 @@ public class PlayerController : MonoBehaviour
             //rigid.AddForce(transform.up * jumpForce);
             transform.Translate(0, jumpForce, 0);
         }
-        // 当たり判定
-        Vector2 p1 = Spike.transform.position;
-        Vector2 p2 = transform.position;
-        Vector2 dir = p1 - p2;
-        float d = dir.magnitude;
-        float r1 = 0.5f;
-        float r2 = 1.0f;
 
         if (timer >= 12f)
         {
@@ -62,12 +53,7 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("ClearScene");
             return;
         }
-        if (d < r1 + r2)
-        {
-            Destroy(gameObject);
-            Debug.Log("ゲームオーバー");
-            SceneManager.LoadScene("OverScene");
-        }
+        GetComponent<AudioSource>().loop = true;
     }
     // 地面との接触判定
     private void OnCollisionEnter2D(Collision2D collision)
@@ -75,6 +61,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Grounded = true;
+        }
+        if (collision.gameObject.CompareTag("SpikedBall"))
+        {   
+            Destroy(gameObject);
+            Debug.Log("ゲームオーバー");
+            SceneManager.LoadScene("OverScene");
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
