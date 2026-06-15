@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6922734969138204988}
   - component: {fileID: -1640432237342865142}
   - component: {fileID: -9195748546839701637}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spiked Ball
   m_TagString: SpikedBall
   m_Icon: {fileID: 0}
