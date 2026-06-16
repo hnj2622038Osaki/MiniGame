@@ -8,13 +8,14 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float jumpForce = 600.0f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
     [SerializeField] Sprite walkSprites;
     private Rigidbody2D rigid;
     private bool Grounded; 
     private float timer = 0f;
 
     float time = 0;
-    int idx = 0;
     SpriteRenderer spriteRenderer;
 
     void Start()
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.upArrowKey.wasPressedThisFrame && rigid.linearVelocityY == 0)
         {
             //rigid.AddForce(transform.up * jumpForce);
-            transform.Translate(0, jumpForce, 0);
+            rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
         if (timer >= 12f)

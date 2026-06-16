@@ -790,8 +790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: 42}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 47, y: 196}
+  m_SizeDelta: {x: 503.9445, y: 97.7286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123634055
 MonoBehaviour:
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.85
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2921,7 +2921,7 @@ Transform:
   m_GameObject: {fileID: 530581969}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1094, y: -0.4791, z: 0}
+  m_LocalPosition: {x: 1.1101, y: -0.4791, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3815,8 +3815,8 @@ GameObject:
   m_Component:
   - component: {fileID: 760743922}
   - component: {fileID: 760743921}
-  - component: {fileID: 760743920}
   - component: {fileID: 760743923}
+  - component: {fileID: 760743920}
   - component: {fileID: 760743924}
   m_Layer: 0
   m_Name: Main Camera
@@ -3893,7 +3893,7 @@ Transform:
   m_GameObject: {fileID: 760743919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57, y: -0.53, z: -10}
+  m_LocalPosition: {x: 0.72, y: -0.77, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3958,14 +3958,14 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 718.12164
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5216,8 +5216,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 51.6
+  m_fontSizeBase: 51.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7755,8 +7755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -170}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -291}
+  m_SizeDelta: {x: 262.5656, y: 80.6645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796282845
 MonoBehaviour:

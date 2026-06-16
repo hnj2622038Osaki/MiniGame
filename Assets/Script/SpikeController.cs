@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -43,5 +44,14 @@ public class SpikeController : MonoBehaviour
             Destroy(gameObject);
         }
         GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(gameObject.name + "Ç∆" + collision.gameObject.name + "Ç™Ç†ÇΩÇ¡ÇΩ(è’ìÀ)");
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(gameObject.name + "Ç∆" + collision.gameObject.name + "Ç™Ç†ÇΩÇ¡ÇΩ");
     }
 }
